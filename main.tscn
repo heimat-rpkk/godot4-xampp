@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://6nbnvtxupa16"]
+
+[ext_resource type="Script" uid="uid://d1vgfbq7bul7v" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 40.0
+offset_right = 887.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 50
+text = "Valitse kahdesta demosta"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 148.0
+offset_right = 873.0
+offset_bottom = 312.0
+text = "Simppeli
+
+Kirjautumisessa ei salata salasanaa.
+Kaksi taulua tietokannassa (users, scores). Niiden välillä ei ole yhteyttä."
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 363.0
+offset_right = 874.0
+offset_bottom = 522.0
+text = "Turvallisempi
+
+Kirjautumisessa salataan salasana (hash).
+Kaksi taulua tietokannassa (scores_secrets, secrets). 
+Tulosten haussa käytössä JOIN, jolla yhdistetään 
+scores_secrets-taulusta user_id ja secrets-taulusta username."
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 23.0
+offset_right = 214.0
+offset_bottom = 72.0
+text = "Frontend:Godot 4
+Backend: PHP + XAMPP"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

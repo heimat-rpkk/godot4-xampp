@@ -1,0 +1,174 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4musiutp50a"]
+
+[ext_resource type="Script" uid="uid://bi1jbwykmkrak" path="res://save.gd" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://djm85ssltr6fk" path="res://read.gd" id="2_m6e0p"]
+[ext_resource type="Script" uid="uid://duj8v2yw7f5l6" path="res://login.gd" id="3_27fn8"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Save" type="Node" parent="."]
+script = ExtResource("1_fyqef")
+
+[node name="ColorRect" type="ColorRect" parent="Save"]
+offset_left = 266.0
+offset_top = 331.0
+offset_right = 577.0
+offset_bottom = 595.0
+color = Color(0.5176471, 0.13725491, 0.9529412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="Save"]
+unique_name_in_owner = true
+offset_left = 308.0
+offset_top = 377.0
+offset_right = 366.0
+offset_bottom = 400.0
+text = "Nimi:"
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLineEdit" type="LineEdit" parent="Save"]
+unique_name_in_owner = true
+offset_left = 384.0
+offset_top = 376.0
+offset_right = 547.0
+offset_bottom = 407.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="Save"]
+unique_name_in_owner = true
+offset_left = 307.0
+offset_top = 438.0
+offset_right = 365.0
+offset_bottom = 461.0
+text = "Pisteet:"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLineEdit" type="LineEdit" parent="Save"]
+unique_name_in_owner = true
+offset_left = 384.0
+offset_top = 436.0
+offset_right = 546.0
+offset_bottom = 467.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SaveButton" type="Button" parent="Save"]
+offset_left = 311.0
+offset_top = 508.0
+offset_right = 450.0
+offset_bottom = 555.0
+text = "Tallenna"
+metadata/_edit_use_anchors_ = true
+
+[node name="InfoLabel" type="Label" parent="Save"]
+unique_name_in_owner = true
+offset_left = 275.0
+offset_top = 569.0
+offset_right = 566.0
+offset_bottom = 592.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Read" type="Node" parent="."]
+script = ExtResource("2_m6e0p")
+
+[node name="ColorRect" type="ColorRect" parent="Read"]
+offset_left = 737.0
+offset_top = 57.0
+offset_right = 1051.0
+offset_bottom = 592.0
+color = Color(0.5254902, 0.4862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Read"]
+unique_name_in_owner = true
+offset_left = 781.0
+offset_top = 83.0
+offset_right = 1050.0
+offset_bottom = 495.0
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Read"]
+offset_left = 789.0
+offset_top = 66.0
+offset_right = 992.0
+offset_bottom = 134.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ReadButton" type="Button" parent="Read"]
+offset_left = 825.0
+offset_top = 515.0
+offset_right = 965.0
+offset_bottom = 557.0
+text = "Hae tulokset"
+metadata/_edit_use_anchors_ = true
+
+[node name="login" type="Node" parent="."]
+script = ExtResource("3_27fn8")
+
+[node name="ColorRect" type="ColorRect" parent="login"]
+offset_left = 115.0
+offset_top = 50.0
+offset_right = 525.0
+offset_bottom = 276.0
+color = Color(0.15294118, 0.20784314, 1, 1)
+
+[node name="UsernameLabel" type="Label" parent="login"]
+offset_left = 155.0
+offset_top = 85.0
+offset_right = 274.0
+offset_bottom = 108.0
+text = "Käyttäjätunnus"
+
+[node name="UsernameLineEdit" type="LineEdit" parent="login"]
+unique_name_in_owner = true
+offset_left = 281.0
+offset_top = 83.0
+offset_right = 456.0
+offset_bottom = 114.0
+
+[node name="PasswordLabel" type="Label" parent="login"]
+offset_left = 158.0
+offset_top = 136.0
+offset_right = 227.0
+offset_bottom = 159.0
+text = "Salasana"
+
+[node name="PasswordLineEdit" type="LineEdit" parent="login"]
+unique_name_in_owner = true
+offset_left = 282.0
+offset_top = 134.0
+offset_right = 459.0
+offset_bottom = 165.0
+
+[node name="LoginButton" type="Button" parent="login"]
+offset_left = 253.0
+offset_top = 185.0
+offset_right = 373.0
+offset_bottom = 239.0
+text = "Kirjaudu"
+
+[node name="LoginInfoLabel" type="Label" parent="login"]
+unique_name_in_owner = true
+offset_left = 134.0
+offset_top = 248.0
+offset_right = 502.0
+offset_bottom = 271.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="login"]
+offset_left = 251.0
+offset_right = 391.0
+offset_bottom = 49.0
+text = "testikäyttäjä: user
+salasana: user"
+
+[connection signal="pressed" from="Save/SaveButton" to="Save" method="_on_save_button_pressed"]
+[connection signal="pressed" from="Read/ReadButton" to="Read" method="_on_read_button_pressed"]
+[connection signal="pressed" from="login/LoginButton" to="login" method="_on_login_button_pressed"]
